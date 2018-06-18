@@ -142,3 +142,24 @@ div#education hr {
     width: 20px;
     margin-right: 5px;
 }
+img.serviceIcon {
+    width: 45px;
+    margin-right: 10px;
+}
+
+.commonService {
+    text-align: center;
+    padding: 5px 0;
+}
+.commonService a {
+    color: white;
+    font-weight: 600;
+}
+
+.sharepointService {
+    background: #004c84;
+}
+
+.azureService {
+    background: #007777;
+}
