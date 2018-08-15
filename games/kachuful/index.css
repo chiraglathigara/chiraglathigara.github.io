@@ -1,0 +1,136 @@
+﻿/*Body*/
+.mainCont {
+    float: left;
+    width: 100%;
+    background: #7fff9b;
+    padding: 10px;
+    font-family: cursive;
+}
+
+    .mainCont > h2 {
+        width: 100%;
+        float: left;
+        text-align: center;
+    }
+
+/*Add Player*/
+.options {
+    float: left;
+    width: 100%;
+    position: relative;
+}
+
+.newPlayer, .clearAll {
+    float: right;
+    margin-left: 10px;
+    padding: 3px 10px;
+}
+
+.addPlayers {
+    width: 300px;
+    background: #ccc;
+    padding: 10px;
+    position: absolute;
+    right: 0;
+    top: 35px;
+    display: none;
+}
+
+    .addPlayers > div {
+        float: left;
+        width: 100%;
+    }
+
+/*Player List*/
+.playersList {
+    float: left;
+    width: 100%;
+    margin: 10px 0;
+}
+
+    .playersList > div {
+        float: left;
+        border: 1px solid #18c53e;
+        padding: 2px;
+        margin-right: 5px;
+    }
+
+        .playersList > div * {
+            float: left;
+            margin: 0 10px 0 0;
+            padding: 0 5px;
+        }
+
+        .playersList > div .btn-danger {
+            font-size: 11px;
+            margin-top: 2px;
+            margin-right: 0;
+        }
+
+/*Current Game Score*/
+.currentGame {
+    float: left;
+    width: 100%;
+    background: #76d28a;
+    padding: 5px;
+    display: none;
+}
+
+    .currentGame > h4 {
+        text-align: center;
+        margin: 0;
+        padding: 5px 0;
+        background: #6cb57c;
+        margin-bottom: 5px;
+    }
+
+    .currentGame > div {
+        float: left;
+        width: 100%;
+        margin-bottom: 5px;
+    }
+
+        .currentGame > div * {
+            float: left;
+            margin: 0 10px 0 0;
+            width: auto;
+            padding: 7px;
+        }
+
+.currentPlayer {
+    min-width: 85px;
+}
+
+/*Game Play*/
+table.showProgress td.incorrect {
+    background: red;
+}
+
+table.showProgress td.correct {
+    background: #1ce01c;
+}
+
+table.showProgress th {
+    background: #cdd6ce;
+}
+
+table.showProgress td,
+table.showProgress th {
+    border: 1px solid;
+    padding: 5px;
+}
+
+.finalResults {
+    float: left;
+    width: 100%;
+}
+
+.finalResults > div {
+    float: left;
+}
+
+.finalResults p {
+    margin: 0;
+    padding: 2px 5px;
+    border: 1px solid #1b752e;
+}
