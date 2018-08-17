@@ -84,6 +84,11 @@
         margin-bottom: 5px;
     }
 
+        .currentGame > h4 img {
+            width: 20px;
+            margin-right: 10px;
+        }
+
     .currentGame > div {
         float: left;
         width: 100%;
@@ -109,7 +114,9 @@ table.showProgress td.incorrect {
 table.showProgress td.correct {
     background: #1ce01c;
 }
-
+table.showProgress  td.correct.bonus {
+    background: #7070ff;
+}
 table.showProgress th {
     background: #cdd6ce;
 }
@@ -125,12 +132,12 @@ table.showProgress th {
     width: 100%;
 }
 
-.finalResults > div {
-    float: left;
-}
+    .finalResults > div {
+        float: left;
+    }
 
-.finalResults p {
-    margin: 0;
-    padding: 2px 5px;
-    border: 1px solid #1b752e;
-}
+    .finalResults p {
+        margin: 0;
+        padding: 2px 5px;
+        border: 1px solid #1b752e;
+    }

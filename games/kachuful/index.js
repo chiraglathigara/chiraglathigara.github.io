@@ -14,7 +14,7 @@ $(document).ready(function () {
         localStorage.cards = 8;
 
     if (!localStorage.hasOwnProperty('reverse'))
-        localStorage.reverse = 1;
+        localStorage.reverse = 0;
 
     loadGamePlay();
     updatePlayerList();
@@ -120,7 +120,7 @@ function loadGamePlay() {
         var trump = scores[iCount].trump;
         var html = '<tr><td>' + trump + '</td>';
         for (var jCount = 0; jCount < players.length; jCount++) {
-            html += '<td class="' + (scores[iCount][players[jCount]].correctPitch ? "correct" : "incorrect") + '">' + scores[iCount][players[jCount]].prediction + '</td>';
+            html += '<td class="' + (scores[iCount][players[jCount]].correctPitch ? "correct" : "incorrect") + ' ' + (scores[iCount][players[jCount]].isBonus ? "bonus" : "nobonus") + '">' + scores[iCount][players[jCount]].prediction + '</td>';
         }
         $('.showProgress tbody').append(html + '</tr>');
     }
@@ -171,7 +171,7 @@ function startGame() {
     $('.currentGame').fadeIn();
 
     players = JSON.parse(players);
-    $('.currentGame').append('<h4>' + mapping[localStorage.cards] + ' - ' + localStorage.cards + '</h4>');
+    $('.currentGame').append('<h4><img src="' + mapping[localStorage.cards] + '.png" />' + mapping[localStorage.cards] + ' - ' + localStorage.cards + '</h4>');
 
     var options = getOptions((localStorage.cards + 1));
     for (var iCount = 0; iCount < players.length; iCount++) {
@@ -234,11 +234,24 @@ function endGame() {
         var user = $('.element' + iCount + ' .currentPlayer').text();
         var prediction = $('.element' + iCount + ' select').val();
         var correctPitch = $('.element' + iCount + ' input[type="checkbox"]').prop('checked');
-        var finalScore = correctPitch ? (prediction > 0 ? prediction : 1) : 0;
+        var finalScore;
+        var isBonus = false;
+        if (prediction == localStorage.cards && $('.enabledBonus:checked').length > 0) {
+            finalScore = correctPitch ? (prediction > 0 ? (prediction * 2) : 1) : 0;
+            if (correctPitch) {
+                isBonus = true;
+                finalScore = (prediction > 0 ? (prediction * 2) : 1);
+            } else {
+                finalScore = 0;
+            }
+        } else {
+            finalScore = correctPitch ? (prediction > 0 ? prediction : 1) : 0;
+        }
         score[user] = {
             score: finalScore,
             prediction: prediction,
-            correctPitch: correctPitch
+            correctPitch: correctPitch,
+            isBonus: isBonus
         };
     }
     var scores = localStorage.scores;
