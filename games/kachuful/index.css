@@ -1,10 +1,22 @@
 ﻿/*Body*/
+html {
+    background: #42cdc9;
+    background: url('background.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+body.container {
+    background: transparent;
+}
+
 .mainCont {
     float: left;
     width: 100%;
-    background: #7fff9b;
     padding: 10px;
     font-family: cursive;
+    color: white;
+    background: rgba(0, 0, 0, 0.2);
 }
 
     .mainCont > h2 {
@@ -28,7 +40,7 @@
 
 .addPlayers {
     width: 300px;
-    background: #ccc;
+    background-image: linear-gradient(to bottom right, #5904ca, #9333f5);
     padding: 10px;
     position: absolute;
     right: 0;
@@ -71,7 +83,7 @@
 .currentGame {
     float: left;
     width: 100%;
-    background: #76d28a;
+    background: rgba(9, 18, 142, 0.4117647058823529);
     padding: 5px;
     display: none;
 }
@@ -80,7 +92,7 @@
         text-align: center;
         margin: 0;
         padding: 5px 0;
-        background: #6cb57c;
+        background: #0a8c7563;
         margin-bottom: 5px;
     }
 
@@ -108,17 +120,17 @@
 
 /*Game Play*/
 table.showProgress td.incorrect {
-    background: red;
+    background: #ff4e4e;
 }
 
 table.showProgress td.correct {
-    background: #1ce01c;
+    background: #0bc10b;
 }
 table.showProgress  td.correct.bonus {
-    background: #7070ff;
+    background: #8d30c5;
 }
 table.showProgress th {
-    background: #cdd6ce;
+    background: #454845;
 }
 
 table.showProgress td,
@@ -130,6 +142,9 @@ table.showProgress th {
 .finalResults {
     float: left;
     width: 100%;
+    background: #ff7a05;
+    text-align: center;
+    display: none;
 }
 
     .finalResults > div {
@@ -139,5 +154,5 @@ table.showProgress th {
     .finalResults p {
         margin: 0;
         padding: 2px 5px;
-        border: 1px solid #1b752e;
+        border: 1px solid #ce6000;
     }

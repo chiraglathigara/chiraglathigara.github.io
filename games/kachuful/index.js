@@ -33,6 +33,7 @@ $(document).ready(function () {
     $('.startGame').click(function () {
         summedValue = 0;
         startGame();
+        $('.finalResults').fadeOut();
     });
 
     $('.results').click(function () {
@@ -68,6 +69,7 @@ $(document).ready(function () {
         }
         alert("Winner is " + winner + ": " + totalPoints);
         $('.finalResults').html(htmlCont);
+        $('.finalResults').fadeToggle();
     });
 
     $('.add').click(function () {
@@ -92,8 +94,8 @@ $(document).ready(function () {
         if ($(e.target).parents('.addPlayers').length == 0 && e.target.className.indexOf('newPlayer') == -1)
             $('.addPlayers').fadeOut();
 
-        if ($(e.target).parents('.currentGame').length == 0 && e.target.className.indexOf('startGame') == -1)
-            $('.currentGame').fadeOut();
+        //if ($(e.target).parents('.currentGame').length == 0 && e.target.className.indexOf('startGame') == -1)
+        //    $('.currentGame').fadeOut();
     });
 });
 
@@ -168,7 +170,7 @@ function startGame() {
         alert("No players available");
         return;
     }
-    $('.currentGame').fadeIn();
+    $('.currentGame').fadeToggle();
 
     players = JSON.parse(players);
     $('.currentGame').append('<h4><img src="' + mapping[localStorage.cards] + '.png" />' + mapping[localStorage.cards] + ' - ' + localStorage.cards + '</h4>');
@@ -187,6 +189,7 @@ function startGame() {
     $('.endGame').click(function () {
         endGame();
         $('.currentGame').fadeOut();
+        $('.finalResults').fadeOut();
     });
 
     $('.lock').click(function () {
